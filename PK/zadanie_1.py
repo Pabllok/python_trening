@@ -1,3 +1,4 @@
+import unittest
 
 def Ne(n,M0):
     x = n * M0 / 5252
@@ -46,3 +47,12 @@ def get_menu_choice():
             input("Zły wybór, spróbuj ponownie..")
 
 get_menu_choice()
+
+class Ne_Case(unittest.TestCase):
+
+    def test_Ne(self):
+        result = Ne(3000, 422)
+        assert result == 5
+
+    def notatest(self):
+        pass
