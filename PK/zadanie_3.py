@@ -57,10 +57,10 @@ def parse_and_remove(filename, path):
                 pass
 
 
-Country = Counter()
+price_by_country = Counter()
 
 data = parse_and_remove('cd_catalog.xml', 'row/row')
-for x in data:
-    Country[x.findtext('COUNTRY')] += 1
-for price, num in Country.most_common():
+for price in data:
+    price_by_country[price.findtext('COUNTRY')] += 1
+for price, num in price_by_country.most_common():
     print(price, num)
